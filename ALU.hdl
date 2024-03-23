@@ -25,7 +25,7 @@ CHIP ALU {
       Mux16(a=xyAnd, b=added, sel=f, out=result);
       Not16(in=result, out=negatedResult);
       Mux16(a=result, b=negatedResult, sel=no, out=out, out[15]=firstOut, out[0..7]=finalLeft, out[8..15]=finalRight);
-	  Or8Way(in=finalLeft, out=zrl);
+      Or8Way(in=finalLeft, out=zrl);
       Or8Way(in=finalRight, out=zrr);
       Or(a=zrl, b=zrr, out=nzr);
       Not(in=nzr, out=zr);
